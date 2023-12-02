@@ -1,11 +1,11 @@
 ﻿// Zadanie zrobione pod Ewę, lat 33, ale zadziała dla wszystkich komunikatów z zadania.
-var Name = "Marek";
-var Age = 20;
-var Sex = "mężczyzna";
+var name = "Marek";
+var age = 20;
+var sex = "mężczyzna";
 
-if (Sex == "kobieta")
+if (sex == "kobieta")
 {
-    if (Name == "Ewa")
+    if (name == "Ewa")
     {
         Console.WriteLine("Ewa");
     }
@@ -18,17 +18,17 @@ else
 {
     Console.WriteLine("mężczyzna");
 }
-if (Age < 18)
+if (age < 18)
 {
     Console.WriteLine("niepełnoletni/a");
 }
-else if (Age >= 18 && Age < 30)
+else if (age >= 18 && age < 30)
 {
     Console.WriteLine("pełnoletni/a, przed 30-stką");
 }
-else if (Age >= 30)
+else if (age >= 30)
 {
-    if (Age == 33)
+    if (age == 33)
     {
         Console.WriteLine("lat 33");
     }
@@ -37,4 +37,3 @@ else if (Age >= 30)
         Console.WriteLine("po 30-stce");
     }
 }
-
