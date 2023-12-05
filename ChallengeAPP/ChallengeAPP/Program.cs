@@ -1,39 +1,69 @@
-﻿// Zadanie zrobione pod Ewę, lat 33, ale zadziała dla wszystkich komunikatów z zadania.
-var name = "Marek";
-var age = 20;
-var sex = "mężczyzna";
+﻿int number = 21165351;
+string numberInString = number.ToString();
+char[] digits = numberInString.ToArray();
 
-if (sex == "kobieta")
+int digit0 = 0;
+int digit1 = 0;
+int digit2 = 0;
+int digit3 = 0;
+int digit4 = 0;
+int digit5 = 0;
+int digit6 = 0;
+int digit7 = 0;
+int digit8 = 0;
+int digit9 = 0;
+
+foreach (char digit in digits)
 {
-    if (name == "Ewa")
+    if (digit == '0')
     {
-        Console.WriteLine("Ewa");
+        digit0++;
     }
-    else
+    else if (digit == '1')
     {
-        Console.WriteLine("kobieta");
+        digit1++;
     }
-}
-else
-{
-    Console.WriteLine("mężczyzna");
-}
-if (age < 18)
-{
-    Console.WriteLine("niepełnoletni/a");
-}
-else if (age >= 18 && age < 30)
-{
-    Console.WriteLine("pełnoletni/a, przed 30-stką");
-}
-else if (age >= 30)
-{
-    if (age == 33)
+    else if (digit == '2')
     {
-        Console.WriteLine("lat 33");
+        digit2++;
     }
-    else
+    else if (digit == '3')
     {
-        Console.WriteLine("po 30-stce");
+        digit3++;
+    }
+    else if (digit == '4')
+    {
+        digit4++;
+    }
+    else if (digit == '5')
+    {
+        digit5++;
+    }
+    else if (digit == '6')
+    {
+        digit6++;
+    }
+    else if (digit == '7')
+    {
+        digit7++;
+    }
+    else if (digit == '8')
+    {
+        digit8++;
+    }
+    else if (digit == '9')
+    {
+        digit9++;
     }
 }
+Console.WriteLine("Dla liczby " + number);
+Console.WriteLine("Cyfra 0 występuje " + digit0 + " raz/y");
+Console.WriteLine("Cyfra 1 występuje " + digit1 + " raz/y");
+Console.WriteLine("Cyfra 2 występuje " + digit2 + " raz/y");
+Console.WriteLine("Cyfra 3 występuje " + digit3 + " raz/y");
+Console.WriteLine("Cyfra 4 występuje " + digit4 + " raz/y");
+Console.WriteLine("Cyfra 5 występuje " + digit5 + " raz/y");
+Console.WriteLine("Cyfra 6 występuje " + digit6 + " raz/y");
+Console.WriteLine("Cyfra 7 występuje " + digit7 + " raz/y");
+Console.WriteLine("Cyfra 8 występuje " + digit8 + " raz/y");
+Console.WriteLine("Cyfra 9 występuje " + digit9 + " raz/y");
