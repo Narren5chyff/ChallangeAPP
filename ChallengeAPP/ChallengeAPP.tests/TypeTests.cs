@@ -26,6 +26,14 @@
 
             Assert.AreEqual(number1, number2);
         }
+        [Test]
+        public void AreTwoNonIntegerNumbersEqual()
+        {
+            float number3 = 1.4F;
+            float number4 = 1.3F;
+
+            Assert.AreNotEqual(number3, number4);
+        }
 
         private User GetUser(string login, string password)
         {
