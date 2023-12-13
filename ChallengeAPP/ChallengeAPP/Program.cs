@@ -1,10 +1,13 @@
 ﻿using ChallengeAPP;
 
 var emploee = new Emploee("Jan", "Kowalski");
-emploee.AddGrade(5);
-emploee.AddGrade(15);
-emploee.AddGrade(9);
+emploee.AddGrade("500");
+emploee.AddGrade("Adam");
+emploee.AddGrade(9.5);
+emploee.AddGrade(14);
+emploee.AddGrade(29.69);
+emploee.AddGrade(97);
 var statistics = emploee.GetStatistics();
-Console.WriteLine($"średnia: {statistics.Average:N2}");
-Console.WriteLine($"min: {statistics.Min}");
-Console.WriteLine($"max: {statistics.Max}");
+Console.WriteLine($"Średnia ocena: {statistics.Average:N2}");
+Console.WriteLine($"Najniższa ocena: {statistics.Min}");
+Console.WriteLine($"Najwyższa ocena: {statistics.Max}");

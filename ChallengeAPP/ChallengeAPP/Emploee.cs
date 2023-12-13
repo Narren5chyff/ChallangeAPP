@@ -14,7 +14,35 @@
         public string Surname { get; private set; }
         public void AddGrade(float grade)
         {
-            this.grades.Add(grade);
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            {
+                Console.WriteLine($"Value {grade} cannot be added");
+            }
+        }
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+                this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine($"String value -{grade}- cannot be changed to float value");
+            }
+        }
+        public void AddGrade(long grade)
+        {
+            float valueInLong = (float)grade;
+            this.AddGrade(valueInLong);
+        }
+        public void AddGrade(double grade)
+        {
+            float valueInDouble = (float)grade;
+            this.AddGrade(valueInDouble);
         }
 
         public Statistics GetStatistics()
