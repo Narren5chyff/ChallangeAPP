@@ -20,7 +20,7 @@
             }
             else
             {
-                Console.WriteLine($"Value {grade} cannot be added");
+                throw new Exception($"Value {grade} cannot be added");
             }
         }
         public void AddGrade(string grade)
@@ -53,8 +53,7 @@
                         this.AddGrade(20);
                         break;
                     default:
-                        Console.WriteLine($"Invalid letter -{grade}-.");
-                        break;
+                        throw new Exception($"Invalid letter -{grade}-.");
                 }
         }
         public void AddGrade(long grade)
