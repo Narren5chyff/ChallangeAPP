@@ -1,10 +1,10 @@
 ﻿namespace ChallengeAPP
 {
-    public class Emploee : IEmploee
+    public class Supervisor : IEmploee
     {
         private List<float> grades = new List<float>();
 
-        public Emploee(string name, string surname, string sex)
+        public Supervisor(string name, string surname, string sex)
         {
             this.Name = name;
             this.Surname = surname;
@@ -28,34 +28,72 @@
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
-            
+
                 this.AddGrade(result);
             else
 
                 switch (grade)
                 {
-                    case "A":
-                    case "a":
+                    case "Ocena: 6":
                         this.AddGrade(100);
                         break;
-                    case "B":
-                    case "b":
+                    case "Ocena: 6-":
+                    case "Ocena: -6":
+                        this.AddGrade(95);
+                        break;
+                    case "Ocena: 5+":
+                    case "Ocena: +5":
+                        this.AddGrade(85);
+                        break;
+                    case "Ocena: 5":
                         this.AddGrade(80);
                         break;
-                    case "C":
-                    case "c":
+                    case "Ocena: 5-":
+                    case "Ocena: -5":
+                        this.AddGrade(75);
+                        break;
+                    case "Ocena: 4+":
+                    case "Ocena: +4":
+                        this.AddGrade(65);
+                        break;
+                    case "Ocena: 4":
                         this.AddGrade(60);
                         break;
-                    case "D":
-                    case "d":
+                    case "Ocena: 4-":
+                    case "Ocena: -4":
+                        this.AddGrade(55);
+                        break;
+                    case "Ocena: 3+":
+                    case "Ocena: +3":
+                        this.AddGrade(45);
+                        break;
+                    case "Ocena: 3":
                         this.AddGrade(40);
                         break;
-                    case "E":
-                    case "e":
+                    case "Ocena: 3-":
+                    case "Ocena: -3":
+                        this.AddGrade(35);
+                        break;
+                    case "Ocena: 2+":
+                    case "Ocena: +2":
+                        this.AddGrade(25);
+                        break;
+                    case "Ocena: 2":
                         this.AddGrade(20);
                         break;
+                    case "Ocena: 2-":
+                    case "Ocena: -2":
+                        this.AddGrade(15);
+                        break;
+                    case "Ocena: 1+":
+                    case "Ocena: +1":
+                        this.AddGrade(5);
+                        break;
+                    case "Ocena: 1":
+                        this.AddGrade(0);
+                        break;
                     default:
-                        throw new Exception($"Invalid letter -{grade}-.");
+                        throw new Exception($"Invalid rate -{grade}-.");
                 }
         }
         public void AddGrade(long grade)

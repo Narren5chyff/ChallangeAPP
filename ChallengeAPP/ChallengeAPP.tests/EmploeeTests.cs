@@ -5,15 +5,15 @@
         [Test]
         public void NewEmploee()
         {
-            var emploee1 = GetEmploee("Jan", "Kowalski");
-            var emploee2 = GetEmploee("Jan", "Kowalski");
+            var emploee1 = GetEmploee("Jan", "Kowalski", "m");
+            var emploee2 = GetEmploee("Jan", "Kowalski", "m");
 
             Assert.AreNotEqual(emploee1, emploee2);
         }
         [Test]
         public void HighestGrade()
         {
-            var emploee1 = new Emploee("Jan", "Kowalski");
+            var emploee1 = new Emploee("Jan", "Kowalski", "m");
             emploee1.AddGrade(2);
             emploee1.AddGrade(7);
             emploee1.AddGrade(9);
@@ -25,7 +25,7 @@
         [Test]
         public void LowestGrade()
         {
-            var emploee1 = new Emploee("Jan", "Kowalski");
+            var emploee1 = new Emploee("Jan", "Kowalski", "m");
             emploee1.AddGrade(1.5F);
             emploee1.AddGrade(5);
             emploee1.AddGrade(7);
@@ -37,7 +37,7 @@
         [Test]
         public void AverageGrade()
         {
-            var emploee1 = new Emploee("Jan", "Kowalski");
+            var emploee1 = new Emploee("Jan", "Kowalski", "m");
             emploee1.AddGrade(2.5F);
             emploee1.AddGrade(6);
             emploee1.AddGrade(9.5F);
@@ -57,7 +57,7 @@
         [Test]
         public void LetterValue()
         {
-            var emploee1 = new Emploee("Jan", "Kowalski");
+            var emploee1 = new Emploee("Jan", "Kowalski", "m");
             emploee1.AddGrade("A");
             emploee1.AddGrade(90);
 
@@ -68,7 +68,7 @@
         [Test]
         public void AddingLetters()
         {
-            var emploee1 = new Emploee("Jan", "Kowalski");
+            var emploee1 = new Emploee("Jan", "Kowalski", "m");
             emploee1.AddGrade("A");
             emploee1.AddGrade(90);
 
@@ -76,9 +76,9 @@
 
             Assert.AreEqual('A', statistics.AverageLetter);
         }
-        private Emploee GetEmploee(string name, string surname)
+        private Emploee GetEmploee(string name, string surname, string sex)
         {
-            return new Emploee(name, surname);
+            return new Emploee(name, surname, sex);
         }
     }
 }
