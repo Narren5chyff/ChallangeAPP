@@ -25,6 +25,7 @@
                 throw new Exception($"Value {grade} cannot be added");
             }
         }
+
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
@@ -58,16 +59,19 @@
                         throw new Exception($"Invalid letter -{grade}-.");
                 }
         }
+
         public void AddGrade(long grade)
         {
             float valueInLong = (float)grade;
             this.AddGrade(valueInLong);
         }
+
         public void AddGrade(double grade)
         {
             float valueInDouble = (float)grade;
             this.AddGrade(valueInDouble);
         }
+
         public Statistics GetStatisticsInForEach()
         {
             var statistics = new Statistics();
