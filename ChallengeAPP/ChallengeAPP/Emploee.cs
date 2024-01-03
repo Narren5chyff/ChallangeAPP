@@ -70,39 +70,39 @@
         }
         public Statistics GetStatisticsInForEach()
         {
-            var statistics1 = new Statistics();
-            statistics1.Min = float.MaxValue;
-            statistics1.Max = float.MinValue;
-            statistics1.Average = 0;
+            var statistics = new Statistics();
+            statistics.Min = float.MaxValue;
+            statistics.Max = float.MinValue;
+            statistics.Average = 0;
 
             foreach (var grade in this.grades)
             {
-                statistics1.Min = Math.Min(statistics1.Min, grade);
-                statistics1.Max = Math.Max(statistics1.Max, grade);
-                statistics1.Average += grade;
+                statistics.Min = Math.Min(statistics.Min, grade);
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Average += grade;
             }
-            statistics1.Average /= this.grades.Count;
+            statistics.Average /= this.grades.Count;
 
-            switch (statistics1.Average)
+            switch (statistics.Average)
             {
                 case var average when average >= 80:
-                    statistics1.AverageLetter = 'A';
+                    statistics.AverageLetter = 'A';
                     break;
                 case var average when average >= 60:
-                    statistics1.AverageLetter = 'B';
+                    statistics.AverageLetter = 'B';
                     break;
                 case var average when average >= 40:
-                    statistics1.AverageLetter = 'C';
+                    statistics.AverageLetter = 'C';
                     break;
                 case var average when average >= 20:
-                    statistics1.AverageLetter = 'D';
+                    statistics.AverageLetter = 'D';
                     break;
                 default:
-                    statistics1.AverageLetter = 'E';
+                    statistics.AverageLetter = 'E';
                     break;
             }
 
-            return statistics1;
+            return statistics;
         }
     }
 }

@@ -25,8 +25,8 @@ while (true)
     }
 }
 
-var statistics1 = emploee1.GetStatisticsInForEach();
-Console.WriteLine($"Średnia ocena: {statistics1.Average:N2}");
-Console.WriteLine($"Najniższa ocena: {statistics1.Min}");
-Console.WriteLine($"Najwyższa ocena: {statistics1.Max}");
-Console.WriteLine($"Ocena: {statistics1.AverageLetter}");
+var statistics = emploee1.GetStatisticsInForEach();
+Console.WriteLine($"Średnia ocena: {statistics.Average:N2}");
+Console.WriteLine($"Najniższa ocena: {statistics.Min}");
+Console.WriteLine($"Najwyższa ocena: {statistics.Max}");
+Console.WriteLine($"Ocena: {statistics.AverageLetter}");
