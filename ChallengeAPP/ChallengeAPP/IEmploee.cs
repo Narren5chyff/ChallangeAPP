@@ -15,6 +15,5 @@
          void AddGrade(double grade);
 
          Statistics GetStatisticsInForEach();
-
     }
 }

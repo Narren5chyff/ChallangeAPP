@@ -1,0 +1,106 @@
+﻿namespace ChallengeAPP
+{
+    public class EmploeeInMemory : EmploeeBase
+    {
+        private List<float> grades = new List<float>();
+        public EmploeeInMemory(string name, string surname, string sex)
+            : base(name, surname, sex)
+        {
+        }
+
+        public override void AddGrade(float grade)
+        {
+            if (grade >= 0 && grade <= 100)
+            {
+                this.AddGrade(grade);
+            }
+            else
+            {
+                throw new Exception($"Value {grade} cannot be added");
+            }
+        }
+
+        public override void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+
+                this.AddGrade(result);
+            else
+
+                switch (grade)
+                {
+                    case "A":
+                    case "a":
+                        this.AddGrade(100);
+                        break;
+                    case "B":
+                    case "b":
+                        this.AddGrade(80);
+                        break;
+                    case "C":
+                    case "c":
+                        this.AddGrade(60);
+                        break;
+                    case "D":
+                    case "d":
+                        this.AddGrade(40);
+                        break;
+                    case "E":
+                    case "e":
+                        this.AddGrade(20);
+                        break;
+                    default:
+                        throw new Exception($"Invalid letter -{grade}-.");
+                }
+        }
+
+        public override void AddGrade(long grade)
+        {
+            float valueInLong = (float)grade;
+            this.AddGrade(valueInLong);
+        }
+
+        public override void AddGrade(double grade)
+        {
+            float valueInDouble = (float)grade;
+            this.AddGrade(valueInDouble);
+        }
+
+        public override Statistics GetStatisticsInForEach()
+        {
+            var statistics = new Statistics();
+            statistics.Min = float.MaxValue;
+            statistics.Max = float.MinValue;
+            statistics.Average = 0;
+
+            foreach (var grade in this.grades)
+            {
+                statistics.Min = Math.Min(statistics.Min, grade);
+                statistics.Max = Math.Max(statistics.Max, grade);
+                statistics.Average += grade;
+            }
+            statistics.Average /= this.grades.Count;
+
+            switch (statistics.Average)
+            {
+                case var average when average >= 80:
+                    statistics.AverageLetter = 'A';
+                    break;
+                case var average when average >= 60:
+                    statistics.AverageLetter = 'B';
+                    break;
+                case var average when average >= 40:
+                    statistics.AverageLetter = 'C';
+                    break;
+                case var average when average >= 20:
+                    statistics.AverageLetter = 'D';
+                    break;
+                default:
+                    statistics.AverageLetter = 'E';
+                    break;
+            }
+
+            return statistics;
+        }
+    }
+}
