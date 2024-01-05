@@ -6,7 +6,9 @@ Console.WriteLine();
 Console.WriteLine("Dodaj ocenę pracownika");
 
 var emploee1 = new EmploeeInFile("Jan", "Kowalski", "m");
-emploee1.AddGrade(100);
+emploee1.AddGrade("C");
+emploee1.AddGrade(15.5);
+emploee1.AddGrade(97);
 
 var statistics = emploee1.GetStatisticsInForEach();
 Console.WriteLine($"Średnia ocena: {statistics.Average:N2}");

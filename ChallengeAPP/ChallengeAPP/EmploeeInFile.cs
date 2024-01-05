@@ -10,34 +10,63 @@
 
         public override void AddGrade(float grade)
         {
-            using (var writer = File.AppendText(fileName))
+            if (grade >= 0 && grade <= 100)
             {
-                writer.WriteLine(grade);
+                using (var writer = File.AppendText(fileName))
+                {
+                    writer.WriteLine(grade);
+                }
+            }
+            else
+            {
+                throw new Exception($"Value {grade} cannot be added");
             }
         }
 
         public override void AddGrade(string grade)
         {
-            using (var writer = File.AppendText(fileName))
-            {
-                writer.WriteLine(grade);
-            }
+            if (float.TryParse(grade, out float result))
+
+                this.AddGrade(result);
+            else
+
+                switch (grade)
+                {
+                    case "A":
+                    case "a":
+                        this.AddGrade(100);
+                        break;
+                    case "B":
+                    case "b":
+                        this.AddGrade(80);
+                        break;
+                    case "C":
+                    case "c":
+                        this.AddGrade(60);
+                        break;
+                    case "D":
+                    case "d":
+                        this.AddGrade(40);
+                        break;
+                    case "E":
+                    case "e":
+                        this.AddGrade(20);
+                        break;
+                    default:
+                        throw new Exception($"Invalid letter -{grade}-.");
+                }
         }
 
         public override void AddGrade(long grade)
         {
-            using (var writer = File.AppendText(fileName))
-            {
-                writer.WriteLine(grade);
-            }
+            float valueInLong = (float)grade;
+            this.AddGrade(valueInLong);
         }
 
         public override void AddGrade(double grade)
         {
-            using (var writer = File.AppendText(fileName))
-            {
-                writer.WriteLine(grade);
-            }
+            float valueInDouble = (float)grade;
+            this.AddGrade(valueInDouble);
         }
 
         public override Statistics GetStatisticsInForEach()
