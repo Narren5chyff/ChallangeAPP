@@ -6,15 +6,14 @@ Console.WriteLine();
 Console.WriteLine("Dodaj ocenę pracownika");
 
 var emploee1 = new EmploeeInFile("Jan", "Kowalski", "m");
-emploee1.AddGrade("C");
-emploee1.AddGrade(15.5);
-emploee1.AddGrade(97);
+emploee1.GradeAdded += NewGradeAdded;
 
-var statistics = emploee1.GetStatisticsInForEach();
-Console.WriteLine($"Średnia ocena: {statistics.Average:N2}");
-Console.WriteLine($"Najniższa ocena: {statistics.Min}");
-Console.WriteLine($"Najwyższa ocena: {statistics.Max}");
-Console.WriteLine($"Ocena: {statistics.AverageLetter}");
+void NewGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę");
+}
+emploee1.AddGrade(13);
+emploee1.AddGrade(89);
 
 //while (true)
 //{
@@ -34,8 +33,8 @@ Console.WriteLine($"Ocena: {statistics.AverageLetter}");
 //    }
 //}
 
-//var statistics = emploee1.GetStatisticsInForEach();
-//Console.WriteLine($"Średnia ocena: {statistics.Average:N2}");
-//Console.WriteLine($"Najniższa ocena: {statistics.Min}");
-//Console.WriteLine($"Najwyższa ocena: {statistics.Max}");
-//Console.WriteLine($"Ocena: {statistics.AverageLetter}");
+var statistics = emploee1.GetStatisticsInForEach();
+Console.WriteLine($"Średnia ocena: {statistics.Average:N2}");
+Console.WriteLine($"Najniższa ocena: {statistics.Min}");
+Console.WriteLine($"Najwyższa ocena: {statistics.Max}");
+Console.WriteLine($"Ocena: {statistics.AverageLetter}");

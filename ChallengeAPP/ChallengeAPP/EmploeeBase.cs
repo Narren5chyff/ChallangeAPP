@@ -12,6 +12,10 @@
         public string Surname { get; private set;}
         public string Sex { get; private set;}
 
+        public delegate void EmploeeGradeAdded(object sender, EventArgs args);
+
+        public abstract event EmploeeGradeAdded GradeAdded;
+        
         public abstract void AddGrade(float grade);
 
         public abstract void AddGrade(string grade);

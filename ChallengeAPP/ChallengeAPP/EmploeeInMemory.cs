@@ -1,8 +1,13 @@
-﻿namespace ChallengeAPP
+﻿using System.ComponentModel;
+
+namespace ChallengeAPP
 {
     public class EmploeeInMemory : EmploeeBase
     {
+        public override event EmploeeGradeAdded GradeAdded;
+
         private List<float> grades = new List<float>();
+
         public EmploeeInMemory(string name, string surname, string sex)
             : base(name, surname, sex)
         {
@@ -12,7 +17,12 @@
         {
             if (grade >= 0 && grade <= 100)
             {
-                this.AddGrade(grade);
+                this.grades.Add(grade);
+
+                if(GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {

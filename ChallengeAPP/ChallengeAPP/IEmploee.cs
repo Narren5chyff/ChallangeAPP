@@ -6,14 +6,16 @@
         string Surname { get; }
         string Sex { get; }
 
-         void AddGrade(float grade);
+        //public void NewGradeAdded();
 
-         void AddGrade(string grade);
+        void AddGrade(float grade);
 
-         void AddGrade(long grade);
+        void AddGrade(string grade);
 
-         void AddGrade(double grade);
+        void AddGrade(long grade);
 
-         Statistics GetStatisticsInForEach();
+        void AddGrade(double grade);
+
+        Statistics GetStatisticsInForEach();
     }
 }
