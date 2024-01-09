@@ -12,8 +12,7 @@ void NewGradeAdded(object sender, EventArgs args)
 {
     Console.WriteLine("Dodano nową ocenę");
 }
-emploee1.AddGrade(13);
-emploee1.AddGrade(89);
+emploee1.AddGrade("B");
 
 //while (true)
 //{
